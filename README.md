@@ -7,3 +7,4 @@ How:
 5. Add tweets using the seeds.rb file.
 6. Change the validations in tweet.rb file to require text and user_name when creating a new tweet.
 7. Change the redirect URL/path for the new and update methods in tweets_controller.rb
+8. If the text includes "http://" or "https://" then use link_to to text. 
