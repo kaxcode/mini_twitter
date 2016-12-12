@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+tweets = Tweet.create (
+[
+  {user_name: "@roxempire", text: "hello, world"}, {user_name: "@roxempire", text: "hello, again"}, {user_name: "@roxempire", text: "hello, can you hear me?"}
+]
+)

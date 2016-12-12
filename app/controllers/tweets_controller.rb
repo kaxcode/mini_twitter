@@ -1,7 +1,7 @@
 class TweetsController < ApplicationController
   # GET /tweets
   def index
-    @tweets = Tweet.all
+    @tweets = Tweet.all.order("created_at DESC")
   end
 
   # GET /tweets/1
@@ -24,7 +24,7 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new(tweet_params)
 
     if @tweet.save
-      redirect_to @tweet, notice: 'Tweet was successfully created.'
+      redirect_to tweets_path, notice: 'Tweet was successfully created.'
     else
       render :new
     end
@@ -34,7 +34,7 @@ class TweetsController < ApplicationController
   def update
     @tweet = Tweet.find(params[:id])
     if @tweet.update(tweet_params)
-      redirect_to @tweet, notice: 'Tweet was successfully updated.'
+      redirect_to tweets_path, notice: 'Tweet was successfully updated.'
     else
       render :edit
     end
