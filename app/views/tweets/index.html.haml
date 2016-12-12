@@ -11,4 +11,7 @@
               ·
               = distance_of_time_in_words_to_now(tweet.created_at)
             %p
-              = tweet.text
+              - if tweet.text.include?("https:")||tweet.text.include?("http:")
+                = link_to tweet.text, tweet.text 
+              - else
+                = tweet.text
